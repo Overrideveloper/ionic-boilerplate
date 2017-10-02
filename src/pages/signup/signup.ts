@@ -3,7 +3,7 @@ import { IonicPage, Alert, AlertController, Loading, LoadingController, NavContr
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthProvider } from '../../providers/auth/auth';
 import { EmailValidator } from '../../validators/email';
-import { HomePage } from '../home/home';
+import { TabsPage } from '../tabs/tabs';
 
 /**
  * Generated class for the SignupPage page.
@@ -39,7 +39,7 @@ export class SignupPage {
 
       this.authProvider.signUpUser(email, password).then( user => {
         this.loading.dismiss().then( () => {
-          this.navCtrl.setRoot(HomePage);
+          this.navCtrl.setRoot(TabsPage);
           const alert:Alert = this.alertCtrl.create({
             message: "Account created",
             buttons: [{ text: "Ok", role:'cancel'}]
